@@ -94,3 +94,111 @@ class MyQueue:
 
     def empty(self):
         return not self.s1 and not self.s2
+
+# Search in Rotated Sorted Array
+# Medium
+# Add to List
+
+# Share
+# You are given an integer array nums sorted in ascending order, and an integer target.
+
+# Suppose that nums is rotated at some pivot unknown to you beforehand (i.e., [0,1,2,4,5,6,7] might become [4,5,6,7,0,1,2]).
+
+# If target is found in the array return its index, otherwise, return -1.
+
+ 
+
+# Example 1:
+
+# Input: nums = [4,5,6,7,0,1,2], target = 0
+# Output: 4
+# Example 2:
+
+# Input: nums = [4,5,6,7,0,1,2], target = 3
+# Output: -1
+# Example 3:
+
+# Input: nums = [1], target = 0
+# Output: -1
+ 
+
+# Constraints:
+
+# 1 <= nums.length <= 5000
+# -10^4 <= nums[i] <= 10^4
+# All values of nums are unique.
+# nums is guranteed to be rotated at some pivot.
+# -10^4 <= target <= 10^4
+
+class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+        if target not in nums:
+            return -1
+        return nums.index(target)
+
+class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+        i = nums.index(target) if target in nums else -1
+        return i
+
+# Find the Duplicate Number
+# Medium
+
+# 5594
+
+# 634
+
+# Add to List
+
+# Share
+# Given an array of integers nums containing n + 1 integers where each integer is in the range [1, n] inclusive.
+
+# There is only one duplicate number in nums, return this duplicate number.
+
+# Follow-ups:
+
+# How can we prove that at least one duplicate number must exist in nums? 
+# Can you solve the problem without modifying the array nums?
+# Can you solve the problem using only constant, O(1) extra space?
+# Can you solve the problem with runtime complexity less than O(n2)?
+ 
+
+# Example 1:
+
+# Input: nums = [1,3,4,2,2]
+# Output: 2
+# Example 2:
+
+# Input: nums = [3,1,3,4,2]
+# Output: 3
+# Example 3:
+
+# Input: nums = [1,1]
+# Output: 1
+# Example 4:
+
+# Input: nums = [1,1,2]
+# Output: 1
+ 
+
+# Constraints:
+
+# 2 <= n <= 3 * 104
+# nums.length == n + 1
+# 1 <= nums[i] <= n
+# All the integers in nums appear only once except for precisely one integer which appears two or more times.
+
+class Solution:
+    def findDuplicate(self, nums: List[int]) -> int:
+        counter = {}
+        for i in nums:
+            if i in counter:
+                return i
+            counter[i] = 0
+
+class Solution:
+    def findDuplicate(self, nums: List[int]) -> int:
+        dic = DefaultDict(int)
+        for num in nums:
+            dic[num] += 1
+            if dic[num] > 1: return num
